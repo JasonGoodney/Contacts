@@ -8,12 +8,14 @@
 
 import UIKit
 
+struct Battery {
+    static var isSaving = false
+}
+
 class ContactListViewController: UIViewController {
     
     // MARK: - Properties
     let cellId = String(describing: UITableViewCell.self)
-    
-    
     
     // MARK: - Subviews
     lazy var tableView: UITableView = {
@@ -24,6 +26,7 @@ class ContactListViewController: UIViewController {
         return view
     }()
     
+    lazy var batterySaverMode = UIBarButtonItem(title: "Turn on battery save mode", style: .plain, target: self, action: #selector(batteryTapped))
     lazy var addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     
     // MARK: - Lifcycle
@@ -39,8 +42,7 @@ class ContactListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "Contacts"
-        
+        title = ""
         self.tableView.reloadData()
     }
     
@@ -74,6 +76,7 @@ private extension ContactListViewController {
     func setupNavigationBar() {
 
         navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = batterySaverMode
         
     }
 
@@ -106,7 +109,25 @@ private extension ContactListViewController {
     
     @objc func addButtonTapped() {
         let contactDetailVC = ContactDetailViewController()
+        
         navigationController?.pushViewController(contactDetailVC, animated: true)
+    }
+    
+    @objc func batteryTapped() {
+        Battery.isSaving = !Battery.isSaving
+        if Battery.isSaving {
+            tableView.backgroundColor = .black
+            tableView.separatorStyle = .none
+            tableView.tableFooterView = UIView()
+            batterySaverMode.title = "Turn off battery save mode"
+            reloadContacts()
+        } else {
+            tableView.backgroundColor = .white
+            tableView.separatorStyle = .singleLine
+            tableView.tableFooterView = nil
+            batterySaverMode.title = "Turn on battery save mode"
+            reloadContacts()
+        }
     }
 }
 
@@ -122,6 +143,11 @@ extension ContactListViewController: UITableViewDataSource {
         let contact = ContactController.shared.contacts[indexPath.row]
         cell.textLabel?.text = contact.name
         
+        if Battery.isSaving {
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+        }
+        
         return cell
     }
 }
@@ -133,6 +159,7 @@ extension ContactListViewController: UITableViewDelegate {
         let contactDetailVC = ContactDetailViewController()
         contactDetailVC.contact = contact
         contactDetailVC.isUpdating = true
+        
         navigationController?.pushViewController(contactDetailVC, animated: true)
     }
 }

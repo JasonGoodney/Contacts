@@ -14,6 +14,7 @@ class ContactDetailView: UIView {
         let textField = UITextField()
         textField.placeholder = "Name"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = .clear
         return textField
     }()
     
@@ -22,6 +23,7 @@ class ContactDetailView: UIView {
         textField.placeholder = "Phone"
         textField.borderStyle = .roundedRect
         textField.keyboardType = .phonePad
+        textField.backgroundColor = .clear
         return textField
     }()
     
@@ -31,6 +33,7 @@ class ContactDetailView: UIView {
         textField.borderStyle = .roundedRect
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
+        textField.backgroundColor = .clear
         return textField
     }()
     

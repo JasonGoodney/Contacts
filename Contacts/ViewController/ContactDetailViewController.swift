@@ -12,6 +12,7 @@ class ContactDetailViewController: UIViewController {
 
     // MARK: - Properties
     var isUpdating = false
+    
     var contact: Contact? {
         didSet {
             updateTextFields()
@@ -69,11 +70,16 @@ class ContactDetailViewController: UIViewController {
         contentView.phoneTextField.delegate = self
         contentView.emailTextField.delegate = self
     }
+
 }
 
 // MARK: - UI
 private extension ContactDetailViewController {
     func updateView() {
+        
+        if Battery.isSaving {
+            view.backgroundColor = .black
+        }
         
         setupNavigationBar()
     }
