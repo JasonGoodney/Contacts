@@ -16,6 +16,8 @@
 		D76129D8215E7C4C00E763E5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76129D7215E7C4C00E763E5 /* ContactDetailViewController.swift */; };
 		D76129DA215E7C5F00E763E5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76129D9215E7C5F00E763E5 /* Contact.swift */; };
 		D76129DC215E7C6A00E763E5 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76129DB215E7C6A00E763E5 /* ContactController.swift */; };
+		D76129DE215E865F00E763E5 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76129DD215E865F00E763E5 /* ContactDetailView.swift */; };
+		D76129E0215E871200E763E5 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76129DF215E871200E763E5 /* UIView+Anchors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		D76129D7215E7C4C00E763E5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		D76129D9215E7C5F00E763E5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		D76129DB215E7C6A00E763E5 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		D76129DD215E865F00E763E5 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		D76129DF215E871200E763E5 /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				D76129DB215E7C6A00E763E5 /* ContactController.swift */,
 				D76129D5215E7C4300E763E5 /* ContactsListViewController.swift */,
 				D76129D7215E7C4C00E763E5 /* ContactDetailViewController.swift */,
+				D76129DD215E865F00E763E5 /* ContactDetailView.swift */,
+				D76129DF215E871200E763E5 /* UIView+Anchors.swift */,
 				D76129C3215E7C1200E763E5 /* Main.storyboard */,
 				D76129C6215E7C1300E763E5 /* Assets.xcassets */,
 				D76129C8215E7C1300E763E5 /* LaunchScreen.storyboard */,
@@ -166,11 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76129DE215E865F00E763E5 /* ContactDetailView.swift in Sources */,
 				D76129DA215E7C5F00E763E5 /* Contact.swift in Sources */,
 				D76129DC215E7C6A00E763E5 /* ContactController.swift in Sources */,
 				D76129D6215E7C4300E763E5 /* ContactsListViewController.swift in Sources */,
 				D76129D8215E7C4C00E763E5 /* ContactDetailViewController.swift in Sources */,
 				D76129C0215E7C1200E763E5 /* AppDelegate.swift in Sources */,
+				D76129E0215E871200E763E5 /* UIView+Anchors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
